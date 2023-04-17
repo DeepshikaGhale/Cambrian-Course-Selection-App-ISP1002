@@ -9,7 +9,8 @@ import UIKit
 
 class CoursesTableViewController: UITableViewController {
     
-    var courseList = CoursesList()
+    var listOfCourses: [Course] = []
+    var typeOfList: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class CoursesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return courseList.courses.count
+        return listOfCourses.count
     }
 
     
@@ -49,8 +50,8 @@ class CoursesTableViewController: UITableViewController {
          //Configure the cell...
         let row = indexPath.row
         
-        cell.courseName.text = courseList.courses[row].title
-        cell.courseCode.text = courseList.courses[row].code
+        cell.courseName.text = listOfCourses[row].title
+        cell.courseCode.text = listOfCourses[row].code
 
         return cell
     }
@@ -74,7 +75,7 @@ class CoursesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            courseList.delete(at: indexPath)
+//            courseList.delete(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -85,17 +86,15 @@ class CoursesTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        courseList.move(from: fromIndexPath, to: to)
+//        courseList.move(from: fromIndexPath, to: to)
     }
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
-
     
     // MARK: - Navigation
 
@@ -103,7 +102,20 @@ class CoursesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        switch segue.identifier{
+            //when the add button is pressed
+        case "listIdentifier":
+            let dst = segue.destination as! CourseDetailsViewController
+            let currentRow = tableView.indexPathForSelectedRow!
+            let index = currentRow.row
+            dst.course = listOfCourses[index]
+            dst.buttonName = typeOfList == "mycourses" ? "Drop Course" : "Add Course"
+            break
         
+            
+        default:
+            preconditionFailure("unidentified segue ID: \(segue.identifier)")
+        }
     }
     
 

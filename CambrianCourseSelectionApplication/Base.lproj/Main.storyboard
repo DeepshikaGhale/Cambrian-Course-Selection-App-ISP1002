@@ -295,7 +295,7 @@
                                 <connections>
                                     <outlet property="courseCode" destination="aUO-SY-PRA" id="TYz-EA-BIH"/>
                                     <outlet property="courseName" destination="vBD-sp-JRN" id="DGc-Fk-5Nz"/>
-                                    <segue destination="u7x-FU-moj" kind="show" identifier="details" id="z02-ZZ-Vaj"/>
+                                    <segue destination="u7x-FU-moj" kind="show" identifier="listIdentifier" id="P7C-8D-n6n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -392,6 +392,9 @@
                                 <rect key="frame" x="20" y="787.66666666666663" width="353" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Course"/>
+                                <connections>
+                                    <action selector="saveCourse:" destination="u7x-FU-moj" eventType="touchUpInside" id="9ZJ-mv-ZMY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XXY-K9-6kq"/>
@@ -421,6 +424,7 @@
                     <navigationItem key="navigationItem" title="Course Details" id="S4J-uI-iKF"/>
                     <connections>
                         <outlet property="courseDescription" destination="ieB-mW-f0Y" id="KyP-dv-uiI"/>
+                        <outlet property="courseDetailsBtnLabel" destination="Yks-6y-4s5" id="WRr-jM-Pp5"/>
                         <outlet property="courseName" destination="89Y-Ln-izi" id="c4d-7z-dZa"/>
                         <outlet property="professorName" destination="rnt-gY-Axx" id="Zzw-dL-MNe"/>
                     </connections>
@@ -431,7 +435,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tkz-QM-x4q"/>
+        <segue reference="8JT-UX-PJd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>

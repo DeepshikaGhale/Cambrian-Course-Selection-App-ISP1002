@@ -9,17 +9,63 @@ import UIKit
 
 class CourseDetailsViewController: UIViewController {
     
+    var courseList = CoursesList()
+    var course: Course? = nil
+    var buttonName: String = "Add Course"
+    var indexPath: IndexPath? = nil
+    
+    
+    //UI elements of course details
     @IBOutlet weak var courseName: UILabel!
     
     @IBOutlet weak var professorName: UILabel!
     
     @IBOutlet weak var courseDescription: UILabel!
     
+    @IBOutlet weak var courseDetailsBtnLabel: UIButton!
+    
+    @IBAction func saveCourse(_ sender: Any) {
+        if(buttonName == "Add Course"){
+            addCourse()
+        }else{
+            deleteCourse()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        courseDetailsBtnLabel.setTitle(buttonName, for: .normal)
+        if let courseData = course{
+            courseName.text = courseData.title
+            professorName.text = courseData.professorName
+            courseDescription.text = courseData.description
+        }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard ( course != nil)
+        else{return}
+
+    }
+    
+    func addCourse(){
+        if let courseData = course{
+            print("before-adding : \(courseList.mycourses.count)")
+            courseList.mycourses.append(courseData)
+            print("added : \(courseList.mycourses.count)")
+        }else{
+            print("not added")
+        }
+    }
+    
+    func deleteCourse(){
+        if let index = indexPath{
+            courseList.delete(at: index)
+        }
     }
     
 
