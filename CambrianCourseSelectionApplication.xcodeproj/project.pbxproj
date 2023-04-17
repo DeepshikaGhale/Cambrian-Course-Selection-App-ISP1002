@@ -16,6 +16,7 @@
 		0DAF181E29EDEE9800CC87C8 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF181D29EDEE9800CC87C8 /* CoursesTableViewController.swift */; };
 		0DAF182029EDEFD800CC87C8 /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF181F29EDEFD800CC87C8 /* CoursesTableViewCell.swift */; };
 		0DAF182229EDF15A00CC87C8 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF182129EDF15A00CC87C8 /* Courses.swift */; };
+		0DAF182429EDF2BC00CC87C8 /* CoursesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF182329EDF2BC00CC87C8 /* CoursesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0DAF181D29EDEE9800CC87C8 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		0DAF181F29EDEFD800CC87C8 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
 		0DAF182129EDF15A00CC87C8 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		0DAF182329EDF2BC00CC87C8 /* CoursesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0DAF181D29EDEE9800CC87C8 /* CoursesTableViewController.swift */,
 				0DAF181F29EDEFD800CC87C8 /* CoursesTableViewCell.swift */,
 				0DAF182129EDF15A00CC87C8 /* Courses.swift */,
+				0DAF182329EDF2BC00CC87C8 /* CoursesList.swift */,
 			);
 			path = CambrianCourseSelectionApplication;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				0DAF182229EDF15A00CC87C8 /* Courses.swift in Sources */,
 				0D81AF2C29E63FA100B02BB1 /* AppDelegate.swift in Sources */,
 				0DAF182029EDEFD800CC87C8 /* CoursesTableViewCell.swift in Sources */,
+				0DAF182429EDF2BC00CC87C8 /* CoursesList.swift in Sources */,
 				0D81AF2E29E63FA100B02BB1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
