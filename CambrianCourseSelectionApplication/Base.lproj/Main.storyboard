@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AEv-SC-ltX"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mFQ-RH-sm0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGr-3q-7me" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="All Courses"/>
                                 <connections>
                                     <action selector="viewAllCourses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yf4-OA-1Oo"/>
-                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="courses" id="8JT-UX-PJd"/>
+                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="courses" id="k6m-oj-wcR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxG-Cn-mm6">
@@ -81,7 +81,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="My Courses"/>
                                 <connections>
                                     <action selector="viewMyCourses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjK-w2-536"/>
-                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="mycourses" id="Tkz-QM-x4q"/>
+                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="mycourses" id="WOF-Gd-LCw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -265,7 +265,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KbZ-9n-26P" customClass="CoursesTableViewCell" customModule="CambrianCourseSelectionApplication" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="80" id="KbZ-9n-26P" customClass="CoursesTableViewCell" customModule="CambrianCourseSelectionApplication" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KbZ-9n-26P" id="BgX-AN-G9R">
@@ -295,7 +295,7 @@
                                 <connections>
                                     <outlet property="courseCode" destination="aUO-SY-PRA" id="TYz-EA-BIH"/>
                                     <outlet property="courseName" destination="vBD-sp-JRN" id="DGc-Fk-5Nz"/>
-                                    <segue destination="u7x-FU-moj" kind="show" identifier="details" id="z02-ZZ-Vaj"/>
+                                    <segue destination="u7x-FU-moj" kind="show" identifier="listIdentifier" id="P7C-8D-n6n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -308,12 +308,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mg1-fA-mdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="896"/>
+            <point key="canvasLocation" x="454" y="894"/>
         </scene>
         <!--Course Details-->
         <scene sceneID="GCv-oT-AHJ">
             <objects>
-                <viewController title="Course Details" id="u7x-FU-moj" sceneMemberID="viewController">
+                <viewController title="Course Details" id="u7x-FU-moj" customClass="CourseDetailsViewController" customModule="CambrianCourseSelectionApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bou-KL-Teg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,15 +378,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOc-g6-ouZ">
                                 <rect key="frame" x="20" y="304.66666666666669" width="353" height="393.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ese-Yr-MwS">
-                                        <rect key="frame" x="23" y="27" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0s-Bh-Pgo">
-                                        <rect key="frame" x="23" y="56" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Syllabus will be provided after course starts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ese-Yr-MwS">
+                                        <rect key="frame" x="23" y="27" width="308" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -399,6 +392,9 @@
                                 <rect key="frame" x="20" y="787.66666666666663" width="353" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Course"/>
+                                <connections>
+                                    <action selector="saveCourse:" destination="u7x-FU-moj" eventType="touchUpInside" id="9ZJ-mv-ZMY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XXY-K9-6kq"/>
@@ -426,14 +422,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Course Details" id="S4J-uI-iKF"/>
+                    <connections>
+                        <outlet property="courseDescription" destination="ieB-mW-f0Y" id="KyP-dv-uiI"/>
+                        <outlet property="courseDetailsBtnLabel" destination="Yks-6y-4s5" id="WRr-jM-Pp5"/>
+                        <outlet property="courseName" destination="89Y-Ln-izi" id="c4d-7z-dZa"/>
+                        <outlet property="professorName" destination="rnt-gY-Axx" id="Zzw-dL-MNe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Euo-3q-idy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="251"/>
+            <point key="canvasLocation" x="1151.9083969465648" y="250.7042253521127"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tkz-QM-x4q"/>
+        <segue reference="k6m-oj-wcR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
