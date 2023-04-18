@@ -14,6 +14,9 @@ class CoursesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var courseCode: UILabel!
     
+    @IBOutlet weak var myCourseName: UILabel!
+    
+    @IBOutlet weak var myCourseCode: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

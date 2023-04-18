@@ -39,7 +39,7 @@ class CourseDetailsViewController: UIViewController {
         if let courseData = course{
             courseName.text = courseData.title
             professorName.text = courseData.professorName
-            courseDescription.text = courseData.description
+            courseDescription.text = courseData.courseDescription
         }
 
         // Do any additional setup after loading the view.
@@ -54,11 +54,7 @@ class CourseDetailsViewController: UIViewController {
     
     func addCourse(){
         if let courseData = course{
-            print("before-adding : \(courseList.mycourses.count)")
-            courseList.mycourses.append(courseData)
-            print("added : \(courseList.mycourses.count)")
-        }else{
-            print("not added")
+            courseList.userCourses.append(courseData)
         }
     }
     

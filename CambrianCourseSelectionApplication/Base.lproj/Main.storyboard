@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AEv-SC-ltX"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mFQ-RH-sm0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGr-3q-7me" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="All Courses"/>
                                 <connections>
                                     <action selector="viewAllCourses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yf4-OA-1Oo"/>
-                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="courses" id="8JT-UX-PJd"/>
+                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="courses" id="k6m-oj-wcR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxG-Cn-mm6">
@@ -81,7 +81,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="My Courses"/>
                                 <connections>
                                     <action selector="viewMyCourses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjK-w2-536"/>
-                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="mycourses" id="Tkz-QM-x4q"/>
+                                    <segue destination="Ua5-Ye-1yh" kind="show" identifier="mycourses" id="WOF-Gd-LCw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,7 +308,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mg1-fA-mdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="896"/>
+            <point key="canvasLocation" x="454" y="894"/>
         </scene>
         <!--Course Details-->
         <scene sceneID="GCv-oT-AHJ">
@@ -435,7 +435,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8JT-UX-PJd"/>
+        <segue reference="k6m-oj-wcR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>

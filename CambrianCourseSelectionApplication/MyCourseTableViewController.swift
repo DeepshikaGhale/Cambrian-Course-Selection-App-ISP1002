@@ -1,5 +1,5 @@
 //
-//  CoursesTableViewController.swift
+//  MyCourseTableViewController.swift
 //  CambrianCourseSelectionApplication
 //
 //  Created by Deepshika Ghale on 2023-04-17.
@@ -7,10 +7,9 @@
 
 import UIKit
 
-class CoursesTableViewController: UITableViewController {
+class MyCourseTableViewController: UITableViewController {
     
-    var courseList: [Course] = []
-    var typeOfList: String = ""
+    var courseList : [Course] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +17,9 @@ class CoursesTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Uncomment the following line to display an Edit button inthe navigation bar for this view controller.
+         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        self.navigationItem.leftBarButtonItem = self.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +29,7 @@ class CoursesTableViewController: UITableViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -79,7 +80,7 @@ class CoursesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
@@ -104,18 +105,21 @@ class CoursesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         switch segue.identifier{
             //when the add button is pressed
-        case "listIdentifier":
+        case "details":
             let dst = segue.destination as! CourseDetailsViewController
             let currentRow = tableView.indexPathForSelectedRow!
             let index = currentRow.row
             dst.course = courseList[index]
-            dst.buttonName = typeOfList == "mycourse" ? "Drop Course" : "Add Course"
+            dst.buttonName = "Drop Course"
+            break
+        
+        case "add_course":
+            let dst = segue.destination as! CoursesTableViewController
             break
             
         default:
             preconditionFailure("unidentified segue ID: \(segue.identifier)")
         }
     }
-    
 
 }
